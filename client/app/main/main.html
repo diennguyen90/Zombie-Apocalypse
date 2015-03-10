@@ -1,0 +1,50 @@
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>RUN FOREST RUN!</h1>
+    <p class="lead">A Todo list to Survive a Zombie Apocolypse</p>
+      <img src="http://www.clipartlord.com/wp-content/uploads/2014/03/zombie8.png" class="chip">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <h1 class="page-header">Safehouses to go:</h1>
+                  <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
+                      <li><h4>{{thing.name}}</h4></li>
+                      <li>{{thing.info}}</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+
+<div class="container">
+    <h2>What to Do in Order to Survive:</h2>
+    <form role="form" ng-submit="addTodo()">
+        <div class="row">
+            <div class="input-group">
+                <input type="text" ng-model="todo" placeholder="Do what you MUST!" class="form-control">
+                    <span class="input-group-btn">
+                <input type="submit" class="btn btn-primary" value="Add">
+                    </span>
+            </div>
+        </div>
+        <br>
+            <!--todo list-->
+
+        <p class="form-group" ng-repeat="todo in todos">
+            <input type="text" ng-model="todo" class="form-control">
+            <span class="input-group-btn">
+            <button class="btn btn-danger" ng-click="removeTodo($index)">X</button>
+            </span>
+        </p>
+        </form>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/cutiedien">@DIENNGUYEN</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>
